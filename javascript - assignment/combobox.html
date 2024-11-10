@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combo Box Operations</title>
+</head>
+<body>
+
+    <h1>Combo Box Operations</h1>
+
+<label for="comboBox">Select an Item:</label>
+    <select id="comboBox" onchange="displayItem()">
+       
+    </select>
+
+    <br><br>
+
+    <input type="text" id="newItem" placeholder="Enter new item">
+    <button onclick="addItem()">Add</button>
+    <button onclick="removeItem()">Remove</button>
+
+    <p id="display"></p>
+
+    <script>
+        function addItem() {
+            let comboBox = document.getElementById("comboBox");
+            let newItem = document.getElementById("newItem").value;
+            if (newItem) comboBox.add(new Option(newItem));
+        }
+
+        function removeItem() {
+            let comboBox = document.getElementById("comboBox");
+            comboBox.remove(comboBox.selectedIndex);
+        }
+
+        function displayItem() {
+            let comboBox = document.getElementById("comboBox");
+            document.getElementById("display").textContent = comboBox.value;
+        }
+    </script>
+
+</body>
+</html>

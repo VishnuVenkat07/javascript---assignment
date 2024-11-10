@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Student Roll Number</h2>
+  <input type="text" id="rollNumber" placeholder="Enter roll number">
+  <button onclick="displayStudentDetails()">Get Details</button>
+  <p id="studentDetails"></p>
+
+  <script>
+    function displayStudentDetails() {
+      const rollNumber = document.getElementById('rollNumber').value;
+      const yearMap = { '19': 'Final Year', '20': 'Third Year', '21': 'Second Year', '22': 'First Year' };
+      const branchMap = { 'CS': 'CSE', 'EC': 'ECE', 'ME': 'Mechanical' };
+      const year = yearMap[rollNumber.substring(2, 4)];
+      const branch = branchMap[rollNumber.substring(4, 6)];
+      document.getElementById('studentDetails').innerText = ${year} ${branch};
+    }
+  </script>
+</body>
+</html>

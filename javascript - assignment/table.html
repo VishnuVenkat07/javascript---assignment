@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Table Operations</h2>
+  <table id="myTable" border="1">
+    <tr>
+      <td>Row1 Col1</td>
+      <td>Row1 Col2</td>
+    </tr>
+    <tr>
+      <td>Row2 Col1</td>
+      <td>Row2 Col2</td>
+    </tr>
+  </table><br>
+  <select onchange="changeBorderWidth(this.value)">
+    <option value="1">1px</option>
+    <option value="3">3px</option>
+    <option value="5">5px</option>
+  </select>
+  <input type="color" id="bgColorPicker" onchange="changeTableBgColor()">
+  <input type="color" id="fgColorPicker" onchange="changeTableFgColor()">
+  <select onchange="alignText(this.value)">
+    <option value="left">Left</option>
+    <option value="center">Center</option>
+    <option value="right">Right</option>
+  </select>
+
+  <script>
+    function changeBorderWidth(width) {
+      document.getElementById('myTable').border = width;
+    }
+
+    function changeTableBgColor() {
+      const color = document.getElementById('bgColorPicker').value;
+      document.getElementById('myTable').style.backgroundColor = color;
+    }
+
+    function changeTableFgColor() {
+      const color = document.getElementById('fgColorPicker').value;
+      document.getElementById('myTable').style.color = color;
+    }
+
+    function alignText(alignment) {
+      document.getElementById('myTable').style.textAlign = alignment;
+    }
+  </script>
+</body>
+</html>

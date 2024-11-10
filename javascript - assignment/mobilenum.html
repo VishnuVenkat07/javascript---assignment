@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Mobile Number Validation</h2>
+  <input type="text" id="mobileNumber" placeholder="Enter mobile number">
+  <button onclick="validateMobile()">Validate</button>
+  <p id="validationResult"></p>
+
+  <script>
+    function validateMobile() {
+      const mobile = document.getElementById('mobileNumber').value;
+      const regex = /^[6-9]\d{9}$/;
+      document.getElementById('validationResult').innerText = regex.test(mobile) ? 'Valid' : 'Invalid';
+    }
+  </script>
+</body>
+</html>

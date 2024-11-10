@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Paragraph Operations</h2>
+  <p id="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia facere ab quas temporibus. Aliquid distinctio, ut minus ullam in tenetur illo beatae voluptatibus recusandae? Consequuntur ut sit harum enim in.</p>
+  <select onchange="changeFontType(this.value)">
+    <option value="Arial">Arial</option>
+    <option value="Verdana">Verdana</option>
+    <option value="Times New Roman">Times New Roman</option>
+  </select>
+  <select onchange="changeFontSize(this.value)">
+    <option value="12px">12px</option>
+    <option value="16px">16px</option>
+    <option value="20px">20px</option>
+  </select>
+  <input type="color" onchange="changeTextColor(this.value)">
+
+  <script>
+    function changeFontType(font) {
+      document.getElementById('paragraph').style.fontFamily = font;
+    }
+
+    function changeFontSize(size) {
+      document.getElementById('paragraph').style.fontSize = size;
+    }
+
+    function changeTextColor(color) {
+      document.getElementById('paragraph').style.color = color;
+    }
+  </script>
+</body>
+</html>

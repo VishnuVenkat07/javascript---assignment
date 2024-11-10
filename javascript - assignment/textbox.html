@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Analysis</title>
+</head>
+<body>
+
+    <h2>Text Analysis</h2>
+
+    <textarea id="textInput" rows="4" cols="50" placeholder="Enter your text here"></textarea>
+    <br><br>
+
+    <button onclick="analyzeText()">Analyze</button>
+    <p id="results"></p>
+
+    <h3>Color Pickers</h3>
+    <input type="color" id="bgColor" onchange="changeBgColor()">
+    <input type="color" id="fgColor" onchange="changeFgColor()">
+
+    <script>
+        function analyzeText() {
+            let text = document.getElementById('textInput').value;
+            let alphabets = (text.match(/[a-zA-Z]/g) || []).length;
+            let digits = (text.match(/[0-9]/g) || []).length;
+            let specialChars = (text.match(/[^a-zA-Z0-9]/g) || []).length;
+            document.getElementById('results').innerHTML = 
+                `Alphabets: ${alphabets} | Digits: ${digits} | Special Characters: ${specialChars}`;
+        }
+
+        function changeBgColor() {
+            document.getElementById('textInput').style.backgroundColor = document.getElementById('bgColor').value;
+        }
+
+        function changeFgColor() {
+            document.getElementById('textInput').style.color = document.getElementById('fgColor').value;
+        }
+    </script>
+
+</body>
+</html>
